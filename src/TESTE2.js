@@ -2,26 +2,27 @@ import { Link ,useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react';
 
 export default function OK(props){
-    const {deck,fun,setCamp, setSelecionar,setNumero} = props
+    const {deck,fun,setCamp, setSelecionar,setNumero,n} = props
     const navigate = useNavigate();
     function a(){
         navigate("/")
     }
+    const [chave,setChave] =useState(true)
     function j(){
         console.log(deck[0])
     }
     const [cor,setCor] =useState('card')
     let num =0
     function MudarCor(){
-        alert('MUDARCOR')
+       
         setCor("blue")
     }
     function MudarNum(){
-        alert('MUDARnum')
+       
         //num=1
     }
     let nome=deck.nome
-    let img=deck.img
+    let img=deck.foto
     let vida=deck.vida
     function deletar(){
         nome=""
@@ -31,11 +32,11 @@ export default function OK(props){
 
 return( <>
    
-    <div className={cor} onClick={() =>fun(nome,MudarCor,deletar,MudarNum,setCamp,setSelecionar,setNumero,deck.lote)}>
+    <div className={cor} onClick={() =>fun(nome,MudarCor,deletar,MudarNum,setCamp,setSelecionar,setNumero,n,chave,setChave)}>
         <img className="imgCard" src={img}></img>
         <p className="nome">{nome}</p>
-        <p>{vida}</p>
-        <p>{deck.ataque}</p>
+        <p> Vida: {vida}</p>
+        <p>  {deck.poder >= 0 ? `Ataque :${deck.poder}`:`Habilidade: cura ${deck.poder*-1}`}</p>
     </div>
 </>)
 }

@@ -1,27 +1,250 @@
 .cor{
     background-color: brown;
     color: blue;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.apagado{
+    background-color: black;
+}
+.acesso{
+    background-color: blue;
+}
+.num{
+    width: 80px;
+    border: 2px solid green;
+    margin-bottom: 10px;
+    margin-left: 10px;  
+}
+.selecao{
+    display: flex;
+    background: rgb(75, 73, 73);
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+}
+.cadastro{
+    background: brown;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.login{
+    background: brown;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.login-caixa{
+    background: green;
+    height: 300px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+}
+.input{
+    margin-bottom: 10px;
+    height: 25px;
+    border-radius: 5px;
+}
+.bt{
+    margin-bottom: 10px;
+    margin-left: 37%;
+}
+.body{
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   
+    width: 100vw;
+}
+.barra{
+    background-color: brown;
+    color: blue;
+    width: 700px;
+    height: 50px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button{
+    color: green;
+    border: 1px solid red;
 }
 .imgCard{
     width: 100px;
     height: 100px;
     margin-left: 10px;
 }
+.teste{
+    background-color: blue;
+    width: 400px;
+    height: 100px;
+}
 .card{
     background-color: brown;
     width: 120px;
     height: 250px;
     border: 5px solid green;
+    margin-left: 10px;
 }
 .blue{
     background-color: brown;
     width: 120px;
     height: 250px;
     border: 5px solid blue;
+    margin-left: 10px;
+}
+.red{
+    background-color: brown;
+    width: 120px;
+    height: 250px;
+    border: 5px solid red;
+    margin-left: 10px;
+}
+.black{
+    background-color: brown;
+    width: 120px;
+    height: 250px;
+    border: 5px solid black;
+    margin-left: 10px;
+}
+.darkb{
+    background-color: brown;
+    width: 120px;
+    height: 250px;
+    border: 5px solid darkcyan;
+    margin-left: 10px;
+}
+.gold{
+    background-color: brown;
+    width: 120px;
+    height: 250px;
+    border: 5px solid gold;
+    margin-left: 10px;
+}
+.thistle{
+    background-color: brown;
+    width: 120px;
+    height: 250px;
+    border: 5px solid thistle;
+    margin-left: 10px;
 }
 .nome{
     color: yellow;
 }
 .tabuleiro{
     display: flex;
+    display: flex;
+    background: rgba(105, 103, 103, 0.651);
+    width: 700px;
+    height: 270px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+  
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.tex-tabuleiro{
+    width: 150px;
+    height: 50px;
+    background: rgba(105, 103, 103, 0.651);
+    color: gold;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tabuleiro2{
+    display: flex;
+    display: flex;
+    background: rgba(175, 88, 54, 0.726);
+    width: 700px;
+    height: 270px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+  
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.tex-tabuleiro2{
+    width: 150px;
+    height: 50px;
+    background: rgba(175, 88, 54, 0.726);
+    color: gold;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mao{
+    display: flex;
+    background: rgb(236, 221, 132);
+    width: 700px;
+    height: 270px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    overflow-x:scroll;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.tex-mao{
+    width: 150px;
+    height: 50px;
+    background: rgb(236, 221, 132);
+    color: rgb(184, 177, 137);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.load{
+    animation: is-rotating 1s infinite;
+    border: 6px solid red;
+    border-top-color: green;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+  
+}
+.cardd{
+    animation-fill-mode: forwards;
+    transform: translateY(-100px);
+}
+#atq{
+    animation: atq 1s infinite;
+    transform: translateY(0px);
+}
+@keyframes is-rotating {
+    
+    to{
+        transform: translateY(0);
+        transform: rotate(1turn);
+    }
+    
+}
+@keyframes atq {
+    
+    to{
+        transform: translateY(-100px);
+        
+    }
+    
 }

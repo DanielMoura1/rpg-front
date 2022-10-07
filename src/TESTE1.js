@@ -5,6 +5,7 @@ export default function Sele(props){
     const {deck} = props
     const navigate = useNavigate();
     function a(){
+        
         navigate("/selecao")
     }
 
