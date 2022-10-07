@@ -134,17 +134,17 @@ export default function JOGAR(props){
         if(camp==true && lotes[n].ativo==false){
             lotes[n].name =selecionar
             console.log(numero)
-            alert('golpe')
+          
             lotes[n].img =deck[numero].foto
             lotes[n].vida =deck[numero].vida
             lotes[n].ataque =deck[numero].poder
             lotes[n].ativo = true
             lotes[n].anima = "atq"
-            alert('golpe')
+          
             golpe[n].loteId=deck[numero].id
             golpe[n].dano=deck[numero].poder
             console.log(golpe)
-            alert('id')
+     
             console.log(lotes[n])
          
             setLotes(lotes)
@@ -177,21 +177,16 @@ export default function JOGAR(props){
             }
         }
         if(golpe[i].inimigoId==0 && golpe[i].ativo===false && cor!=='card' && verifica=="ok"){
-            alert('okok')
-            alert(golpe[i].inimigoId)
-            alert(golpe[i].ativo )
+          
             fun(cor)
             golpe[i].inimigoId=id
-            alert(golpe[i].inimigoId)
+           
             golpe[i].ativo =true
             console.log(golpe)
           
-            alert('golpe')
-            alert(i)
+           
         }else{
-            alert('nice')
-            alert(golpe[i].inimigoId)
-            console.log(golpe)
+       
         }
        
 
