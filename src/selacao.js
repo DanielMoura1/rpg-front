@@ -34,7 +34,7 @@ export default function Sel(props){
     useEffect(() => {
         async function getpg1(){
          try{
-            const promessa=await axios.get('http://localhost:5000/selecao',{headers: {
+            const promessa=await axios.get('https://daniel-moura-rpg.herokuapp.com/selecao',{headers: {
                 authorization : token
              }})
              setCard(promessa.data)
@@ -54,7 +54,7 @@ export default function Sel(props){
         try {
             alert('oi')
             if(num===10){
-            const resposta = await axios.post(`http://localhost:5000/adicionar`,cards,{headers: {
+            const resposta = await axios.post(`https://daniel-moura-rpg.herokuapp.com/adicionar`,cards,{headers: {
                 authorization : token
              }})
             

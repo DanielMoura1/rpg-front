@@ -28,7 +28,7 @@ export default function Cadastro(props){
             
         }
         try {
-            const resposta = await axios.post(`http://localhost:5000/cadastro`, {
+            const resposta = await axios.post(`https://daniel-moura-rpg.herokuapp.com/cadastro`, {
                 email: email, senha: senha,nome:nome
             })
             alert("/jogar1")

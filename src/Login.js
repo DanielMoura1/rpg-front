@@ -26,8 +26,9 @@ export default function Login(props){
         if(senha==='' || email===''){
             return alert('digite a senha e o email')
         }
+        //http://localhost:5000/
         try {
-            const resposta = await axios.post(`http://localhost:5000/login`, {
+            const resposta = await axios.post(`https://daniel-moura-rpg.herokuapp.com/login`, {
                 email: email, senha: senha
             })
             token =resposta.data

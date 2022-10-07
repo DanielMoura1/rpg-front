@@ -69,7 +69,7 @@ export default function JOGAR(props){
         setLoad('load')
         setA('OK')
         const promise = axios.post(
-            'http://localhost:5000/inimigos',
+            'https://daniel-moura-rpg.herokuapp.com/inimigos',
             {golpe},{headers: {
                 authorization : token
              }}
@@ -85,7 +85,7 @@ export default function JOGAR(props){
     useEffect(() => {
         async function getpg1(){
          try{
-            const promessa=await axios.get('http://localhost:5000/criarUser',{headers: {
+            const promessa=await axios.get('https://daniel-moura-rpg.herokuapp.com/criarUser',{headers: {
                 authorization : token
              }})
              setDeck(promessa.data)
@@ -96,7 +96,7 @@ export default function JOGAR(props){
         }
         async function getpg2(){
             try{
-               const promessa=await axios.get('http://localhost:5000/inimigos',{headers: {
+               const promessa=await axios.get('https://daniel-moura-rpg.herokuapp.com/inimigos',{headers: {
                    authorization : token
                 }})
                 setInimigos(promessa.data)
