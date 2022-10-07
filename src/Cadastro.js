@@ -31,13 +31,13 @@ export default function Cadastro(props){
             const resposta = await axios.post(`https://daniel-moura-rpg.herokuapp.com/cadastro`, {
                 email: email, senha: senha,nome:nome
             })
-            alert("/jogar1")
+            
             token =resposta.data
-            alert("/jogar2")
+         
             setToken(resposta.data)
-            alert("/jogar3")
+           
             updateToken(token)
-            alert("/jogar4")
+        
             navigate("/jogar")
             
         } catch (err) {
