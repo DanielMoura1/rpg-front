@@ -1,7 +1,6 @@
 import { Link ,useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from 'react';
-
 export default function Cadastro(props){
     const {setToken} = props
     const localStorageTeste = JSON.parse(localStorage.getItem('token'))
@@ -28,7 +27,7 @@ export default function Cadastro(props){
             
         }
         try {
-            const resposta = await axios.post(`https://daniel-moura-rpg.herokuapp.com/cadastro`, {
+            const resposta = await axios.post(`https://rpg-daniel.herokuapp.com/cadastro`, {
                 email: email, senha: senha,nome:nome
             })
             
