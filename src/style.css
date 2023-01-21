@@ -94,7 +94,37 @@
     width: 400px;
     height: 100px;
 }
+.letra{
+    color: red;
+}
+.letracura{
+    color: blue;
+}
+.vazio{
+    display: none;
+}
+.palavraDano{
+    color: blueviolet;
+    font-size: 30px;
+}
+.placarcura{
+    background-color: rgba(0, 128, 0, 0.445);
+    position: absolute;
+	right: 0px;
+	bottom: 30px;
+    width: 120px;
+    height: 100px;
+}
+.placar{
+    background-color: rgba(127, 255, 212, 0.425);
+    position: absolute;
+	right: 0px;
+	top: 20px;
+    width: 120px;
+    height: 100px;
+}
 .card{
+    position: relative;
     background-color: brown;
     width: 120px;
     height: 250px;
@@ -102,6 +132,7 @@
     margin-left: 10px;
 }
 .blue{
+    position: relative;
     background-color: brown;
     width: 120px;
     height: 250px;
@@ -109,6 +140,7 @@
     margin-left: 10px;
 }
 .red{
+    position: relative;
     background-color: brown;
     width: 120px;
     height: 250px;
@@ -116,6 +148,7 @@
     margin-left: 10px;
 }
 .black{
+    position: relative;
     background-color: brown;
     width: 120px;
     height: 250px;
@@ -123,6 +156,7 @@
     margin-left: 10px;
 }
 .darkb{
+    position: relative;
     background-color: brown;
     width: 120px;
     height: 250px;
@@ -130,6 +164,7 @@
     margin-left: 10px;
 }
 .gold{
+    position: relative;
     background-color: brown;
     width: 120px;
     height: 250px;
@@ -137,6 +172,7 @@
     margin-left: 10px;
 }
 .thistle{
+    position: relative;
     background-color: brown;
     width: 120px;
     height: 250px;
