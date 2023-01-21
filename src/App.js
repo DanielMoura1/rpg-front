@@ -6,7 +6,7 @@ import Cadastro from "./Cadastro.js";
 import Selecao from "./selacao";
 import "./style.css";
 import JOGAR from "./jogar.js";
-
+import Perfil from "./perfil.js";
 export default  function App() {
  
   const [card,setCard] =useState([])
@@ -24,6 +24,7 @@ return (
       <Route path="/cadastro" element={<Cadastro setToken={setToken}/>} />
       <Route path="/selecao"  element={<Selecao  setCard={setCard} card={card} setDeck={setDeck} token={tok} deck={deck} />} />
       <Route path="/jogar" element={<JOGAR deck={deck} token={tok} setDeck={setDeck} />} />
+      <Route path="/perfil" element={< Perfil token={tok}/>} />
     </Routes>
     </BrowserRouter>
   </div>

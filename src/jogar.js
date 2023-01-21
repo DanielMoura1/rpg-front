@@ -83,6 +83,7 @@ export default function JOGAR(props){
     const placarinimigo2=[placaring1,placaring2,placaring3,placaring4,placaring5]
     const [indice,setIndice] =useState(0)
     const [okatk,setOkk] =useState(true)
+    const [perfil,setPerfil] =useState([{foto:'',nome:'',fase:0}])
     async function ok(){
         if(okatk){
             setOkk(false)
@@ -139,15 +140,28 @@ export default function JOGAR(props){
                console.log('ruim no getpg2')
             }
            }
+           async function getpg3(){
+            try{//https://daniel-moura-rpg.herokuapp.com/inimigos
+               const promessa=await axios.get('http://localhost:5000/perfil',{headers: {
+                   authorization : token
+                }})
+                setPerfil(promessa.data)
+                console.log('perfil')
+                console.log(promessa.data)
+            }catch(e){
+               console.log('ruim no getpg2')
+            }
+           }
          getpg1()
          getpg2()
+         getpg3()
         
          }, []);
     function a(){
         navigate("/")
     }
-    function j(){
-        console.log(camp)
+    function perfilPG(){
+        navigate("/perfil")
     }
     function colarCardCampoDeBatalha(nome,cor,deletar,num,setCamp,setSelecionar,setNumero,n,chave,setChave){
         if(camp ===false && chave==true){
@@ -318,6 +332,6 @@ return( <div className="body">
     })}
     </div>
           
-   
+    <div className="navegador"> aaaa<img onClick={perfilPG} className="imgPerfil" src={perfil[0].foto} alt=""/> {perfil[0].nome}  fase : {perfil[0].fase}  </div>
 </div>)
 }
