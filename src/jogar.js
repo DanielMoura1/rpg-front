@@ -83,7 +83,7 @@ export default function JOGAR(props){
     const placarinimigo2=[placaring1,placaring2,placaring3,placaring4,placaring5]
     const [indice,setIndice] =useState(0)
     const [okatk,setOkk] =useState(true)
-    const [perfil,setPerfil] =useState([{foto:'',nome:'',fase:0}])
+    const [perfil,setPerfil] =useState([{foto:'',nome:'',fase:0,vitorias:0}])
     async function ok(){
         if(okatk){
             setOkk(false)
@@ -158,7 +158,10 @@ export default function JOGAR(props){
         
          }, []);
     function a(){
-        navigate("/")
+        navigate("/rank")
+    }
+    function b(){
+        navigate("/loja")
     }
     function perfilPG(){
         navigate("/perfil")
@@ -332,6 +335,6 @@ return( <div className="body">
     })}
     </div>
           
-    <div className="navegador"> aaaa<img onClick={perfilPG} className="imgPerfil" src={perfil[0].foto} alt=""/> {perfil[0].nome}  fase : {perfil[0].fase}  </div>
+    <div className="navegador"> aaaa<img onClick={perfilPG} className="imgPerfil" src={perfil[0].foto} alt=""/> {perfil[0].nome}  fase : {perfil[0].fase} vitorias : {perfil[0].vitorias} -<p onClick={a}> rank -</p><p onClick={b}> loja </p>  </div>
 </div>)
 }

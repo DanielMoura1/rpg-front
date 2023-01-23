@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import axios from "axios";
 import CardsSelecao from "./cards-selecao"
-export default function Sel(props){
+export default function Loja(props){
     const {setDeck,deck,token,setToken,card,setCard} = props
     let n=-1
 
@@ -34,10 +34,13 @@ export default function Sel(props){
     useEffect(() => {
         async function getpg1(){
          try{
-            const promessa=await axios.get('http://localhost:5000/selecao',{headers: {
+            //mudar
+            const promessa=await axios.get('http://localhost:5000/loja',{headers: {
                 authorization : token
              }})
              setCard(promessa.data)
+          
+             console.log(card)
             
          }catch(e){
             console.log('ruim no getpg1')
@@ -51,7 +54,8 @@ export default function Sel(props){
     async function b(){
         try {
             alert('oi')
-            if(num===10){
+            if(num===10){//apagar if
+                //mudar
             const resposta = await axios.post(`http://localhost:5000/adicionar`,cards,{headers: {
                 authorization : token
              }})
