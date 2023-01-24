@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from "axios";
 import CardsSelecao from "./cards-selecao"
 export default function Sel(props){
+    
     const {setDeck,deck,token,setToken,card,setCard} = props
     let n=-1
 
@@ -69,12 +70,12 @@ export default function Sel(props){
        
     }
 return( <>
-   
-    <p className="cor"> ok seleçao ok</p>
   
-    <button className={time} onClick={()=> b()}>montar deck</button>
-    <p className="num" >cards: {num}/10</p>
     <div className="selecao" >
+    <div className="butaoselek">
+        <button className={time} onClick={()=> b()}>Montar deck</button>
+        <p className="num" >cards: {num}/10</p>
+    </div>
     {
     card.map((cd)=>{
         n=n+1

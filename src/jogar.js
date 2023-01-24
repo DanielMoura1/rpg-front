@@ -335,6 +335,9 @@ return( <div className="body">
     })}
     </div>
           
-    <div className="navegador"> aaaa<img onClick={perfilPG} className="imgPerfil" src={perfil[0].foto} alt=""/> {perfil[0].nome}  fase : {perfil[0].fase} vitorias : {perfil[0].vitorias} -<p onClick={a}> rank -</p><p onClick={b}> loja -</p> ouro : {perfil[0].ouro}  </div>
+    <div className="navegador">
+        <div  onClick={perfilPG}  className="navegador2">
+        <img className="imgPerfil" src={perfil[0].foto} alt=""/> {perfil[0].nome}
+        </div> <p className="navegador3">fase : {perfil[0].fase}</p> <p  className="navegador3">vitorias : {perfil[0].vitorias}</p>  <div  className="navegador222" onClick={a}><p  className="navegador3" > rank </p></div> <div className="navegador222" onClick={b}><p  className="navegador3" > loja </p></div> <p  className="navegador3">ouro : {perfil[0].ouro} </p>  </div>
 </div>)
 }

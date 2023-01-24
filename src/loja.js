@@ -3,6 +3,10 @@ import { useState, useEffect } from 'react';
 import axios from "axios";
 import CardsSelecao from "./cards-loja"
 export default function Loja(props){
+    let voltar ='<<<---'
+    function voltajogar(){
+        navigate("/jogar")
+    }
     const {setDeck,deck,token,setToken,card,setCard} = props
     let n=-1
     const navigate = useNavigate();
@@ -98,9 +102,11 @@ export default function Loja(props){
     }
 return( <>
    
-    <p className="cor"> ok seleçao ok</p>
-    <p className="num" >ouro : {perfil[0].ouro}</p>
     <div className="selecao" >
+        <div className="butaoselek">
+            <p onClick={voltajogar} className="cor">{voltar}  Voltar</p>
+            <p className="num" >ouro : {perfil[0].ouro}</p>
+        </div>
     {
     card.map((cd)=>{
         n=n+1

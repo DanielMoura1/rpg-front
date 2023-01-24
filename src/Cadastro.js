@@ -53,7 +53,7 @@ export default function Cadastro(props){
     }
 return( <div className="cadastro">
     <div className="login-caixa">
-    <p className="cor"> ok cadastro ok</p>
+    <p className="cor3"> CADASTRO</p>
     <form onSubmit={login}>
         <div>
             <input  className="input" type={'text'} value={email} onChange={(e) => setEmail(e.target.value)} placeholder='e-mail'></input>

@@ -46,7 +46,7 @@ export default function Login(props){
     }
 return(<div className="login">
     <div className="login-caixa">
-    <p className="cor"> LOGIN</p>
+    <p className="cor3"> LOGIN</p>
     <form  onSubmit={login}>
         <div>
             <input className="input" type={'text'} value={email} onChange={(e) => setEmail(e.target.value)} placeholder='e-mail'></input>

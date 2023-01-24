@@ -10,8 +10,8 @@ return( <>
     <div className={cor} onClick={()=>pegar(card,cards,n,setCardS,setNum,setChave,chave,setCor)}>
         <img className="imgCard" src={card.foto}></img>
         <p className="nome">{card.nome}</p>
-        <p>{card.vida}</p>
-        <p>{card.poder}</p>
+        <p>Vida : {card.vida}</p>
+        <p>{card.poder >= 0 ? `Ataque : ${card.poder}`:`Habilidade: cura ${card.poder*-1}`}</p>
     </div>
 </>)
 }

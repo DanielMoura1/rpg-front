@@ -11,7 +11,7 @@ export default function Sele(props){
 
 return( <>
    
-   <p className="cor"> deck vazio</p>
-    <p onClick={()=> a()}>montar deck</p>
+   <p className="cor2"> deck vazio :</p>
+    <button className="botaodeck" onClick={()=> a()}>Montar deck</button>
 </>)
 }
