@@ -1,7 +1,6 @@
 import { Link ,useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from 'react';
-
 export default function Cadastro(props){
     const {setToken} = props
     const localStorageTeste = JSON.parse(localStorage.getItem('token'))
