@@ -1,35 +1,47 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import axios from "axios";
-import CardsSelecao from "./cards-selecao"
+import CardsSelecao from "./cards-loja"
 export default function Loja(props){
     const {setDeck,deck,token,setToken,card,setCard} = props
     let n=-1
-
-
     const navigate = useNavigate();
     function a(){
         navigate("/")
     }
-    const [cards,setCardS] =useState([])
+    const [cards,setCardS] =useState([{
+    foto: "",
+    id: 0,
+    nome: "",
+    ouroCard: [{cardId: 0,
+        id: 0,
+        ouro: 0}],
+    poder: 150,
+    vida: 1500}])
     const [num,setNum] =useState(0)
     const [time,setTime] =useState('apagado')
+    const [compra,setCompra] =useState('lojas')
+    const [perfil,setPerfil] =useState([{foto:'',nome:'',fase:0,vitorias:0,ouro:0}])
+    
+    function ck(){
+        console.log('cards[0].nome')
+        console.log(cards)
+    }
     function pegar(c,cards,n,setCardS,setNum,ok,chave,setCor){
-        if(chave ===false && num<10){
-        cards.push(c)
-        console.log(c)
+        //cards.push(c)
+        console.log('loja')
+       setCardS([c])
+       console.log(cards)
+       setCompra('caixa')
       
-       setCardS(cards)
-       setNum(cards.length)
-       ok(true)
-       setCor('blue')
        
        if(num===9){
         setTime('acesso')
        }
-        }else{
-            alert('Seu deck só pode ter 10 cartas')
-        }
+        
+    }
+    function fechar(){
+        setCompra('lojas')
     }
     useEffect(() => {
         async function getpg1(){
@@ -46,38 +58,48 @@ export default function Loja(props){
             console.log('ruim no getpg1')
          }
         }
+        async function getpg2(){
+            try{//https://daniel-moura-rpg.herokuapp.com/inimigos
+               const promessa=await axios.get('http://localhost:5000/perfil',{headers: {
+                   authorization : token
+                }})
+                setPerfil(promessa.data)
+            }catch(e){
+               console.log('ruim no getpg2')
+            }
+           }
        
          getpg1()
-       
+         getpg2()
         
          }, []);
     async function b(){
-        try {
-            alert('oi')
-            if(num===10){//apagar if
-                //mudar
-            const resposta = await axios.post(`http://localhost:5000/adicionar`,cards,{headers: {
-                authorization : token
-             }})
-            
-            navigate("/jogar")
+        if( cards[0].ouroCard[0].ouro<=perfil[0].ouro ){
+            try {
+                alert('oi')
+                    //mudar
+                const resposta = await axios.post(`http://localhost:5000/loja`,cards,{headers: {
+                    authorization : token
+                }})
+                
+                navigate("/jogar")
+            } catch (err) {
+                console.log(err)
+                if (err.response.data === undefined) {
+                    alert('servidor off')
+                } else {
+                    alert(err.response.data)
+                }
             }
-        } catch (err) {
-            console.log(err)
-            if (err.response.data === undefined) {
-                alert('servidor off')
-            } else {
-                alert(err.response.data)
-            }
+        }else{
+            alert('ouro insuficiente')
         }
        
     }
 return( <>
    
     <p className="cor"> ok seleçao ok</p>
-  
-    <button className={time} onClick={()=> b()}>montar deck</button>
-    <p className="num" >cards: {num}/10</p>
+    <p className="num" >ouro : {perfil[0].ouro}</p>
     <div className="selecao" >
     {
     card.map((cd)=>{
@@ -88,6 +110,20 @@ return( <>
             </>
         )}
         )}
+        <div className={compra}>
+            <img className="imgloja" src={cards[0].foto}/>
+            <div>
+                <p>ouro: {cards[0].ouroCard[0].ouro}</p>
+            </div>
+            <div>
+                <p>nome: {cards[0].nome}</p>
+            </div>
+           <div>
+            <button onClick={fechar} className="botaoVermelho">cancelar</button>
+            <button onClick={b} className={ cards[0].ouroCard[0].ouro<=perfil[0].ouro ?"botaoAzul":"botaoCinza"}>comprar</button>
+           </div>
+            
+        </div>
     </div>
   
 </>)
