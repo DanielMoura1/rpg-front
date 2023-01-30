@@ -25,6 +25,8 @@ export default function Cadastro(props){
         if(senha==='' || email==='' || nome ===''){
             return alert('digite a senha, nome e o email')
             
+        }else if(nome.length>15){
+            return alert('Nome não pode ter mais que 15 caracteres')
         }
         try {//https://daniel-moura-rpg.herokuapp.com/
             const resposta = await axios.post(`http://localhost:5000/cadastro`, {
