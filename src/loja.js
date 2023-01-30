@@ -119,10 +119,10 @@ return( <>
         <div className={compra}>
             <img className="imgloja" src={cards[0].foto}/>
             <div>
-                <p>ouro: {cards[0].ouroCard[0].ouro}</p>
+                <p>Custo : {cards[0].ouroCard[0].ouro}</p>
             </div>
             <div>
-                <p>nome: {cards[0].nome}</p>
+                <p>Nome: {cards[0].nome}</p>
             </div>
            <div>
             <button onClick={fechar} className="botaoVermelho">cancelar</button>

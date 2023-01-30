@@ -11,8 +11,8 @@ return( <>
         <img className="imgCard" src={card.foto}></img>
         <p className="nome">{card.nome}</p>
         <p>Vida : {card.vida}</p>
-        <p>{card.poder >=0 ? `poder : ${card.poder}`:`cura :  ${card.poder*-1}`} </p>
-        <p>ouro: {card.ouroCard[0].ouro}</p>
+        <p>{card.poder >=0 ? `Poder : ${card.poder}`:`Cura :  ${card.poder*-1}`} </p>
+        <p>Ouro: {card.ouroCard[0].ouro}</p>
     </div>
 </>)
 }
