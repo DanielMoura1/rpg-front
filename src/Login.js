@@ -40,7 +40,7 @@ export default function Login(props){
             if (err.response.data === undefined) {
                 alert('servidor off')
             } else {
-                alert(err.response.data)
+                alert('Email ou senha incorreto')
             }
         }
     }

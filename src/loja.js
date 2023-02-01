@@ -80,7 +80,6 @@ export default function Loja(props){
     async function b(){
         if( cards[0].ouroCard[0].ouro<=perfil[0].ouro ){
             try {
-                alert('oi')
                     //mudar
                 const resposta = await axios.post(`http://localhost:5000/loja`,cards,{headers: {
                     authorization : token
@@ -119,14 +118,14 @@ return( <>
         <div className={compra}>
             <img className="imgloja" src={cards[0].foto}/>
             <div>
-                <p>ouro: {cards[0].ouroCard[0].ouro}</p>
+                <p>Custo : {cards[0].ouroCard[0].ouro}</p>
             </div>
             <div>
-                <p>nome: {cards[0].nome}</p>
+                <p>Nome: {cards[0].nome}</p>
             </div>
            <div>
-            <button onClick={fechar} className="botaoVermelho">cancelar</button>
-            <button onClick={b} className={ cards[0].ouroCard[0].ouro<=perfil[0].ouro ?"botaoAzul":"botaoCinza"}>comprar</button>
+            <button onClick={fechar} className="botaoVermelho">Cancelar</button>
+            <button onClick={b} className={ cards[0].ouroCard[0].ouro<=perfil[0].ouro ?"botaoAzul":"botaoCinza"}>Comprar</button>
            </div>
             
         </div>

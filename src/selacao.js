@@ -51,7 +51,6 @@ export default function Sel(props){
          }, []);
     async function b(){
         try {
-            alert('oi')
             if(num===10){
             const resposta = await axios.post(`http://localhost:5000/adicionar`,cards,{headers: {
                 authorization : token
