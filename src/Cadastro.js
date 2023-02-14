@@ -13,6 +13,7 @@ export default function Cadastro(props){
     const [email,setEmail] =useState('')
     const [senha,setSenha] =useState('')
     const [nome,setNome] =useState('')
+    const [iniciar,setIniciar] =useState(true)
     const navigate = useNavigate();
     function a(){
         navigate("/cadastro")
@@ -22,25 +23,29 @@ export default function Cadastro(props){
     }
     async function login(e){
         e.preventDefault();
-        if(senha==='' || email==='' || nome ===''){
-            return alert('digite a senha, nome e o email')
-            
-        }else if(nome.length>15){
-            return alert('Nome não pode ter mais que 15 caracteres')
-        }
         try {//https://daniel-moura-rpg.herokuapp.com/
-            const resposta = await axios.post(`http://localhost:5000/cadastro`, {
-                email: email, senha: senha,nome:nome
-            })
-            
-            token =resposta.data
-         
-            setToken(resposta.data)
-           
-            updateToken(token)
-        
-            navigate("/jogar")
-            
+            if(iniciar){
+                if(senha==='' || email==='' || nome ===''){
+                    return alert('digite a senha, nome e o email')
+                    
+                }else if(nome.length>15){
+                    return alert('Nome não pode ter mais que 15 caracteres')
+                }
+                    setIniciar(false)
+                    const resposta = await axios.post(`http://localhost:5000/cadastro`, {
+                        email: email, senha: senha,nome:nome
+                    })
+                    
+                    token =resposta.data
+                 
+                    setToken(resposta.data)
+                   
+                    updateToken(token)
+                
+                    navigate("/jogar")
+                   
+                    
+            }
         } catch (err) {
             console.log(err)
             if (err.response.data === undefined) {
